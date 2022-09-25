@@ -1,7 +1,6 @@
 import SimpleLightbox from "simplelightbox";
-
+import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items.js';
-
 // Change code below this line
 
 
@@ -11,33 +10,6 @@ const galleryEl = document.querySelector(".gallery")
 const markup = CreateGallery(galleryItems)
 galleryEl.insertAdjacentHTML("beforeend", markup)
 
-   
-
-galleryEl.addEventListener("click", onGalleryClick)
-
-
-function onGalleryClick(evt) {
-    evt.preventDefault()
-     
-    // if (evt.target.nodeName !== "A") {
-    //     return;
-    
-
-    
-    // }
-    
-    
-   
-const instance = basicLightbox.create(`
-    <img src="${evt.target.dataset.source}">
-`)
-
-instance.show()
-
-}
-
-
-
 function CreateGallery(galleryItems) {
      return galleryItems.map( ({preview, original, description}) => {
          return  ` <div class="gallery__item">
@@ -45,7 +17,6 @@ function CreateGallery(galleryItems) {
     <img
       class="gallery__image"
       src="${preview}"
-      data-source="${original}"
       alt="${description}"
     />
   </a>
@@ -55,11 +26,9 @@ function CreateGallery(galleryItems) {
 
    
 }
-
-
+let lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250, captionsData:"alt",});
 
 
 console.log(galleryItems);
-
  
   
