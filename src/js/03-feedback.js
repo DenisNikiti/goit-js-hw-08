@@ -27,14 +27,14 @@ formEmailEl.addEventListener("input", throttle(onformEmailEl,500 ))
 
 
 function onformEmailEl(evt) {
-const message = evt.currentTarget.value
-    localStorage.setItem("feedback-form-state-email",message)
+
+    localStorage.setItem("feedback-form-state-email",evt.currentTarget.value)
 }
 
 
-formtTextareaEl.addEventListener("input", throttle(onForminpu,500))
+formtTextareaEl.addEventListener("input", throttle(onForminput,500))
 
-function onForminput(evt) {
-    const message = evt.currentTarget.value
-    localStorage.setItem("feedback-form-state-text",message)
+function onForminput(event) {
+    
+    localStorage.setItem("feedback-form-state-text",event.currentTarget.value)
 }
