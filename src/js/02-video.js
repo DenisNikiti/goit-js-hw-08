@@ -4,9 +4,10 @@
 const currenttime = JSON.parse(localStorage.getItem("videoplayer-current-time"))
 
 
-
-
-player.setCurrentTime(currenttime.seconds).then(function(seconds) {
+ if (currenttime) {
+    
+     
+       player.setCurrentTime(currenttime.seconds).then(function(seconds) {
     
 }).catch(function(error) {
     switch (error.name) {
@@ -19,6 +20,11 @@ player.setCurrentTime(currenttime.seconds).then(function(seconds) {
             break;
     }
 });
+
+     
+     
+ }
+
 
 
 
