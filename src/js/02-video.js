@@ -1,5 +1,5 @@
 
-
+var throttle = require('lodash.throttle');
 
 const currenttime = JSON.parse(localStorage.getItem("videoplayer-current-time"))
 
@@ -29,7 +29,7 @@ const currenttime = JSON.parse(localStorage.getItem("videoplayer-current-time"))
 
 
 
-const timeupdate =  throttle(    function (data) {
+const timeupdate =  throttle(  function (data) {
     localStorage.setItem("videoplayer-current-time",JSON.stringify(data))
 },1000)
     
