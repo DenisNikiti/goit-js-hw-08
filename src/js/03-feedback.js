@@ -6,10 +6,12 @@ const formEmailEl = document.querySelector(".feedback-form input[type=email]")
 
 const savedEmailText =  JSON.parse(localStorage.getItem("feedback-form-state"))            
 
-
+  console.log(savedEmailText)
 if (savedEmailText) {
-    formtTextareaEl.value = savedEmailText.email
-    formEmailEl.value = savedEmailText.message
+    formtTextareaEl.value = savedEmailText.message
+    formEmailEl.value = savedEmailText.email
+
+
 }
 
 
